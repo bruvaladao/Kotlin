@@ -8,7 +8,6 @@ fun main() {
 
     val contaFran = Conta()
     contaFran.titular = "Fran"
-    contaFran.numero = 1001
     contaFran.saldo = 300.0
 
     println("INFORMAÇÃO CONTA ALEX")
@@ -26,35 +25,4 @@ class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
-}
-
-fun testaLacos() {
-    var i: Int = 0
-    while (i <= 5) {
-        println(i)
-        i++
-    }
-
-    for (i in 5 downTo 1) {
-        val titular = "Bruno $i"
-        val numeroConta = 1000
-        var saldo = -100.0
-        saldo = 100.0
-        saldo += 200
-
-        println("Titular: $titular")
-        println("Numero da conta: $numeroConta")
-        println("Saldo da conta: $saldo")
-
-    }
-}
-
-fun testaCondicoes(saldo: Double) {
-    if (saldo > 0.0) {
-        println("Conta é positiva.")
-    } else if (saldo == 0.0) {
-        println("Conta neutra")
-    } else {
-        println("Conta negativa")
-    }
 }
