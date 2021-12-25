@@ -11,7 +11,7 @@ fun main() {
     contaFran.numero = 1001
     contaFran.saldo = 300.0
 
-    println("INFORMAÇÃO CONTA ALEX ALURA")
+    println("INFORMAÇÃO CONTA BRUNO VALADÃO")
     println("Titular: ${contaAlex.titular}")
     println("Número da conta: ${contaAlex.numero}")
     println("Saldo: ${contaAlex.saldo}")
