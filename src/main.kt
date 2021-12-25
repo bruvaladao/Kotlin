@@ -8,6 +8,7 @@ fun main() {
 
     val contaFran = Conta()
     contaFran.titular = "Fran"
+    contaFran.numero = 1001
     contaFran.saldo = 300.0
 
     println("INFORMAÇÃO CONTA ALEX")
