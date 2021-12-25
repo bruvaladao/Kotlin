@@ -21,7 +21,6 @@ fun main() {
     println("Número da conta: ${contaFran.numero}")
     println("Saldo: ${contaFran.saldo}")
 }
-
 class Conta {
     var titular = ""
     var numero = 0
