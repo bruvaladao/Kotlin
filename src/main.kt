@@ -20,10 +20,25 @@ fun main() {
     println("Titular: ${contaFran.titular}")
     println("Número da conta: ${contaFran.numero}")
     println("Saldo: ${contaFran.saldo}")
+
+    println ("Despositando na conta do Alex")
+    deposita(contaAlex, 20.0)
+    println(contaAlex.saldo)
+
+    println("Depositando na conta da Fran")
+    deposita(contaFran, 100.0)
+    println(contaFran.saldo)
+
+}
+
+fun deposita(conta: Conta, valor: Double){
+    conta.saldo += valor
 }
 
 class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
+
+
 }
