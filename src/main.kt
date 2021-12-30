@@ -4,34 +4,34 @@ fun main() {
     val contaAlex = Conta()
     contaAlex.titular = "Alex"
     contaAlex.numero = 1000
-    contaAlex.saldo = 100.0
+    contaAlex.setSaldo(100.0)
 
     val contaFran = Conta()
     contaFran.titular = "Fran"
     contaFran.numero = 1001
-    contaFran.saldo = 300.0
+    contaFran.setSaldo(300.0)
 
     println("INFORMAÇÃO CONTA ALEX")
     println("Titular: ${contaAlex.titular}")
     println("Número da conta: ${contaAlex.numero}")
-    println("Saldo: ${contaAlex.saldo}")
+    println("Saldo: ${contaAlex.getSaldo()}")
 
     println("INFORMAÇÃO CONTA FRAN")
     println("Titular: ${contaFran.titular}")
     println("Número da conta: ${contaFran.numero}")
-    println("Saldo: ${contaFran.saldo}")
+    println("Saldo: ${contaFran.getSaldo()}")
 
     println("Despositando na conta do Alex")
     contaAlex.deposita(20.0)
-    println(contaAlex.saldo)
+    println(contaAlex.getSaldo())
 
     println("Depositando na conta da Fran")
     contaFran.deposita(100.0)
-    println(contaFran.saldo)
+    println(contaFran.getSaldo())
 
     println("Sacando na conta do Alex")
     contaAlex.saca(20.0)
-    println("Saldo da conta do Alex: ${contaAlex.saldo}")
+    println("Saldo da conta do Alex: ${contaAlex.getSaldo()}")
 
     println("Transferindo para Fran")
     if (contaAlex.transfere(50.0, contaFran)){
@@ -40,15 +40,15 @@ fun main() {
         println("Falha na transferência")
     }
 
-    println("Saldo da conta do Alex: ${contaAlex.saldo}")
-    println("Saldo da conta da Fran: ${contaFran.saldo}")
+    println("Saldo da conta do Alex: ${contaAlex.getSaldo()}")
+    println("Saldo da conta da Fran: ${contaFran.getSaldo()}")
 
 }
 
 class Conta {
     var titular = ""
     var numero = 0
-    var saldo = 0.0
+    private var saldo = 0.0
 
     fun deposita(valor: Double) {
         this.saldo += valor
@@ -63,9 +63,17 @@ class Conta {
     fun transfere(valor: Double, destino: Conta): Boolean {
         if (this.saldo >= valor) {
             saldo -= valor
-            destino.saldo += valor
+            destino.deposita(valor)
             return true
         }
         return false
+    }
+
+    fun getSaldo(): Double{
+        return saldo
+    }
+
+    fun setSaldo(valor: Double){
+        saldo = valor
     }
 }
