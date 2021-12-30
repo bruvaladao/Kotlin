@@ -33,6 +33,16 @@ fun main() {
     contaAlex.saca(20.0)
     println("Saldo da conta do Alex: ${contaAlex.saldo}")
 
+    println("Transferindo para Fran")
+    if (contaAlex.transfere(50.0, contaFran)){
+        println("Transferencia com sucesso")
+    } else{
+        println("Falha na transferência")
+    }
+
+    println("Saldo da conta do Alex: ${contaAlex.saldo}")
+    println("Saldo da conta da Fran: ${contaFran.saldo}")
+
 }
 
 class Conta {
@@ -48,5 +58,14 @@ class Conta {
         if (this.saldo >= valor) {
             this.saldo -= valor
         }
+    }
+
+    fun transfere(valor: Double, destino: Conta): Boolean {
+        if (this.saldo >= valor) {
+            saldo -= valor
+            destino.saldo += valor
+            return true
+        }
+        return false
     }
 }
