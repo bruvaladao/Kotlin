@@ -4,4 +4,5 @@ fun main() {
     println("Nome: ${bruno.nome}")
     println("CPF: ${bruno.cpf}")
     println("Salário: ${bruno.salario}")
+    println("Bonificação: ${bruno.bonificacao()}")
 }
