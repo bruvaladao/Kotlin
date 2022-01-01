@@ -1,5 +1,3 @@
-import com.sun.jdi.DoubleValue
-
 class Diretor(
     nome: String,
     cpf: String,
