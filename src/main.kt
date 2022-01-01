@@ -1,5 +1,6 @@
 fun main() {
     println("Bem vindo ao Bytebank")
+
     val bruno = Funcionario("Bruno", "370.380.238-37", 1000.0)
     println("Nome: ${bruno.nome}")
     println("CPF: ${bruno.cpf}")
@@ -23,7 +24,8 @@ fun main() {
     println("Nome: ${gisele.nome}")
     println("CPF: ${gisele.cpf}")
     println("Salário: ${gisele.salario}")
-    println("PLR: ${gisele.prl}")
+    println("PLR: ${gisele.plr}")
+    println("Bonificação: ${gisele.bonificacao()}")
 
     if (gisele.autentica(4000)){
         println("Autentificado com sucesso.")
