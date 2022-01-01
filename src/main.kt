@@ -32,4 +32,12 @@ fun main() {
     } else{
         println("Falha na autentificação.")
     }
+
+    val calculadora = CalculadoraBonificacao()
+    calculadora.registra(bruno)
+    calculadora.registra(pamela)
+    calculadora.registra(gisele)
+
+    println("Total de bonficação: ${calculadora.total}")
+
 }
